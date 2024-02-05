@@ -7,6 +7,16 @@ return {
 		"MunifTanjim/nui.nvim",
 	},
 	config = function()
+		require("neo-tree").setup({
+			window = {
+				width = 35,
+				mappings = {
+					h = "close_node",
+					l = "open",
+				},
+			},
+		})
+
 		vim.keymap.set("n", "<leader>e", ":Neotree toggle<CR>", {})
 		vim.keymap.set("n", "<leader>bf", ":Neotree buffers reveal float<CR>", {})
 	end,
