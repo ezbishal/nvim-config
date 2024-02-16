@@ -7,7 +7,7 @@ return {
 			start_in_insert = true,
 			direction = "float",
 			close_on_exit = true,
-			shell = "powershell",
+			shell = "pwsh",
 			float_opts = {
 				border = "curved",
 				width = 100,
