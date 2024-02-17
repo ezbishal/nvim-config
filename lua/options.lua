@@ -22,6 +22,7 @@ vim.keymap.set("n", "<C-Right>", ":vertical resize +2<CR>", { noremap = true, si
 vim.keymap.set("n", "H", ":bprevious<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "L", ":bnext<CR>", { noremap = true, silent = true })
 vim.keymap.set("n", "<leader>bd", ":bnext<CR>:bd#<CR>", { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>bp", ":BufferLineTogglePin<CR>", { noremap = true, silent = true })
 --
 
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { noremap = true, silent = true })
