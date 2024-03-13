@@ -12,5 +12,7 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
+vim.api.nvim_set_hl(0, 'NonText', {ctermbg = 'none'})
+
 require("options")
 require("lazy").setup("plugins")
