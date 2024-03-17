@@ -6,6 +6,7 @@ vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
 vim.cmd("set noswapfile")
 vim.cmd("set undofile")
+vim.wo.relativenumber = true
 vim.opt.clipboard:append("unnamedplus")
 
 vim.keymap.set("n", "<C-h>", ":bprevious<CR>", { noremap = true, silent = true })
