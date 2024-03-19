@@ -2,7 +2,7 @@ return {
 	"akinsho/toggleterm.nvim",
 	config = function()
 		require("toggleterm").setup({
-			open_mapping = [[<c-r>]],
+			open_mapping = [[<c-j>]],
 			shade_terminals = true,
 			start_in_insert = true,
 			direction = "float",
