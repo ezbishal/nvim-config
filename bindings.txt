@@ -1,0 +1,154 @@
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "C:\\Users\\ezbis\\AppData\\Local\\nvim",
+  "vim.startInInsertMode": false,
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.hlsearch": true,
+  "vim.surround":true,
+  "vim.foldfix": true,
+  "vim.highlightedyank.enable": true,
+  "vim.highlightedyank.color": "#a9dc7660",
+  "vim.highlightedyank.duration": 250,
+  "vim.leader": "<space>",
+  "extensions.experimental.affinity": {
+    "vscodevim.vim": 1
+  },
+
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": ["k", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<C-u>"], "after": ["C-u", "z", "z"] },
+    { "before": ["<C-d>"], "after": ["C-d", "z", "z"] },
+    { "before": ["<Esc>"], "commands": [":noh"] },
+    { "before": ["<C-l>"], "commands": [":tabnext"] },
+    { "before": ["<C-h>"], "commands": [":tabprev"] },
+    { "before": ["<leader>", "b", "o"], "commands": [":tabo"] },
+    { "before": ["<leader>", "b", "n"], "commands": [":tabnew"] },
+    { "before": ["<leader>", "b", "d"], "commands": ["workbench.action.closeActiveEditor"] },
+    { "before": ["<leader>", "b", "p"], "commands": ["workbench.action.pinEditor"] },
+    { "before": ["<leader>", "b", "P"], "commands": ["workbench.action.unpinEditor"] },
+    { "before": ["<leader>", "e"], "commands": ["workbench.view.explorer"] },
+    { "before": ["<leader>", "l", "f"], "commands": ["editor.action.formatDocument"] }, 
+    { "before": ["<leader>", "w"], "commands": ["workbench.action.files.saveAll"] },
+    { "before": ["<leader>", "p"], "commands": ["workbench.action.showCommands"] },
+    { "before": ["<leader>", "f"], "commands": ["workbench.action.quickOpen"] },
+    { "before": ["<leader>", "s"], "commands": ["workbench.action.gotoSymbol"] },
+    { "before": ["<leader>", "S"], "commands": ["workbench.action.showAllSymbols"] },
+    { "before": ["g", "p"], "commands": ["editor.action.peekImplementation"] },
+    { "before": ["g", "r"], "commands": ["editor.action.goToReferences"] }
+  ]
+
+-----------------------------------------------------------------------------------
+
+[
+  {
+    "key": "escape",
+    "command": "-extension.vim_escape",
+    "when": "editorTextFocus && vim.active && !inDebugRepl"
+  },
+  {
+    "key": "ctrl+b",
+    "command": "-extension.vim_ctrl+b",
+    "when": "editorTextFocus && vim.active && vim.use<C-b> && !inDebugRepl && vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.terminal.toggleTerminal",
+    "when": "vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.toggleMaximizedPanel",
+    "when": "vim.mode != 'Insert'"
+  },
+  {
+    "key": "ctrl+i",
+    "command": "-extension.vim_ctrl+i",
+    "when": "editorTextFocus && vim.active && vim.use<C-i> && !inDebugRepl"
+  },
+  {
+    "key": "tab",
+    "command": "togglePeekWidgetFocus",
+    "when": "inReferenceSearchEditor || referenceSearchVisible"
+  },
+  {
+    "key": "space e",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "filesExplorerFocus && !inputFocus"
+  },
+  {
+    "key": "a",
+    "command": "explorer.newFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "f",
+    "command": "explorer.newFolder",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "r",
+    "command": "renameFile",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "x",
+    "command": "filesExplorer.cut",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "y",
+    "command": "filesExplorer.copy",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceIsRoot && !inputFocus"
+  },
+  {
+    "key": "p",
+    "command": "filesExplorer.paste",
+    "when": "explorerViewletVisible && filesExplorerFocus && !explorerResourceReadonly && !inputFocus"
+  },
+  {
+    "key": "d",
+    "command": "deleteFile",
+    "when": "filesExplorerFocus && foldersViewVisible && !explorerResourceReadonly && !inputFocus"
+  }
+]
+
+----------------------------------------------------------------------------------------------
+
+set clipboard=unnamed
+set relativenumber
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+let mapleader=" "
+inoremap kj <esc>
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+nnoremap <leader>s :source C:\Users\bishal.adhikari\.vsvimrc<CR>
+nnoremap <leader>w :vsc File.SaveAll<CR>
+nnoremap <leader>lf :vsc Edit.FormatDocument
+nnoremap <Esc> :noh<CR>
+nnoremap <leader>f :vsc Edit.GoToFile<CR>
+nnoremap <leader>p :vsc Window.QuickLaunch<CR>
+nnoremap <leader>e :vsc View.SolutionExplorer<CR>
+
+nnoremap <C-l> :tabnext<CR>
+nnoremap <C-h> :tabprevious<CR>
+nnoremap <leader>bo :tabo<CR>
+nnoremap <leader>bd :vsc Window.CloseDocumentWindow<CR>
+nnoremap <leader>bp :vsc Window.PinTab<CR>
+nnoremap <leader>bd 
+
+nnoremap gp :vsc Edit.PeekDefinition<CR>
+nnoremap gd :vsc Edit.GoToDefinition<CR>
+nnoremap gr :vsc Edit.FindAllReferences<CR>
+nnoremap gh :vsc Edit.QuickInfo<CR>
+
+
+
